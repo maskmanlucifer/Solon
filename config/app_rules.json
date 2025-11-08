@@ -1,0 +1,22 @@
+{
+  "startup": {
+    "keep_open": [],
+    "close_others": true
+  },
+  "display_rules": {
+    "w1": [
+      {
+        "app": "Cursor",
+        "behavior": "maximize",
+        "maximize": true
+      },
+      {
+        "app": "Google Chrome",
+        "behavior": "maximize",
+        "maximize": true
+      }
+    ],
+    "w2": [],
+    "laptop": []
+  }
+}

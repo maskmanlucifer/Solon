@@ -1,0 +1,52 @@
+behaviors:
+  - name: "open_cursor_repo"
+    pattern: "open cursor.*{repo}"
+    actions:
+      - type: launch_app
+        app: "Cursor"
+        args: ["{repo}"]
+  
+  - name: "open_vscode_repo"
+    pattern: "open vscode.*{repo}|open code.*{repo}"
+    actions:
+      - type: launch_app
+        app: "Visual Studio Code"
+        args: ["{repo}"]
+  
+  - name: "move_cursor_to_w1"
+    pattern: "move.*cursor.*w1|w1.*cursor|move cursor.*display.*1"
+    actions:
+      - type: move_windows
+        app: "Cursor"
+        display: 1
+        maximize: true
+  
+  - name: "move_cursor_to_w2"
+    pattern: "move.*cursor.*w2|w2.*cursor|move cursor.*display.*2"
+    actions:
+      - type: move_windows
+        app: "Cursor"
+        display: 2
+        maximize: true
+  
+  - name: "move_terminal_to_w2"
+    pattern: "move.*terminal.*w2|w2.*terminal|move terminal.*display.*2"
+    actions:
+      - type: move_windows
+        app: "Terminal"
+        display: 2
+        maximize: true
+  
+  - name: "close_cursor_except_repo"
+    pattern: "close.*cursor.*except.*{repo}"
+    actions:
+      - type: close_windows_except
+        app: "Cursor"
+        repo_path: "{repo}"
+  
+  - name: "close_port"
+    pattern: "close.*port.*{port}|kill.*port.*{port}"
+    actions:
+      - type: kill_port
+        port: "{port}"
+
